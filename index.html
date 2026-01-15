@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexora - Premium Self-Drive Car Rentals</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">NEXORA</div>
+            <div class="nav-right" id="navRight">
+                <button class="btn-login" id="loginBtn">Login / Sign up</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Freedom to Drive</h1>
+                <p class="hero-subtitle">Experience the luxury of premium self-drive cars at your fingertips. Travel on your terms, explore at your pace.</p>
+                
+                <div class="search-card">
+                    <div class="search-field">
+                        <label>City</label>
+                        <select id="citySelect">
+                            <option>Bhopal</option>
+                            <option>Mumbai</option>
+                            <option>Delhi</option>
+                            <option>Bangalore</option>
+                            <option>Hyderabad</option>
+                        </select>
+                    </div>
+                    <div class="search-field">
+                        <label>Trip Start</label>
+                        <input type="datetime-local" id="tripStart">
+                    </div>
+                    <div class="search-field">
+                        <label>Trip End</label>
+                        <input type="datetime-local" id="tripEnd">
+                    </div>
+                    <button class="btn-search" id="searchCarsBtn">Search Cars</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/uiImage.jpeg" alt="Premium Car">
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <h2 class="section-title">How It Works</h2>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-icon">📍</div>
+                <h3>Select City & Dates</h3>
+                <p>Choose your city and pick your travel dates</p>
+            </div>
+            <div class="step-card">
+                <div class="step-icon">🔍</div>
+                <h3>Search Cars</h3>
+                <p>Browse through our premium collection</p>
+            </div>
+            <div class="step-card">
+                <div class="step-icon">🚗</div>
+                <h3>Choose Your Car</h3>
+                <p>Select the perfect car for your journey</p>
+            </div>
+            <div class="step-card">
+                <div class="step-icon">🎉</div>
+                <h3>Book & Drive</h3>
+                <p>Complete booking and hit the road</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cars Section -->
+    <section class="cars-section" id="carsSection">
+        <div class="section-header">
+            <h2 class="section-title">Our Premium Fleet</h2>
+            <button class="btn-browse" id="browseAllBtn">Browse All Cars</button>
+        </div>
+        <div class="cars-grid" id="carsGrid"></div>
+    </section>
+
+    <!-- Become a Host -->
+    <section class="become-host">
+        <div class="host-content">
+            <div class="host-text">
+                <h2>Become a Host</h2>
+                <p>Turn your car into an earning asset. Join thousands of hosts who are making money by sharing their vehicles.</p>
+                <button class="btn-host" id="becomeHostBtn">Become a Host</button>
+            </div>
+            <div class="host-image">
+                <img src="images/happycustomer.jpeg" alt="Happy Customer">
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about">
+        <h2 class="section-title">About Nexora</h2>
+        <p class="about-text">Nexora is India's leading self-drive car rental platform, offering a premium fleet of vehicles for every occasion. Whether it's a weekend getaway, business trip, or daily commute, we provide the freedom to drive on your terms with seamless booking and transparent pricing.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+       <div class="social-links">
+    <a href="#" class="social-icon">
+        <img src="images/instagram.webp" alt="Instagram">
+    </a>
+</div>
+        <p class="copyright">© 2026 Nexora. All rights reserved.</p>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content login-modal">
+            <span class="close" id="closeLogin">&times;</span>
+            <div class="modal-split">
+                <div class="modal-image">
+                    <img src="images/login.jpeg" alt="Login">
+                </div>
+                <div class="modal-form">
+                    <h2>Welcome Back</h2>
+                    <p class="modal-subtitle">Login to continue your journey</p>
+                    <form id="loginForm">
+                        <input type="email" id="loginEmail" placeholder="Email" required>
+                        <input type="password" id="loginPassword" placeholder="Password" required>
+                        <button type="submit" class="btn-submit">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeBooking">&times;</span>
+            <h2>Complete Your Booking</h2>
+            <form id="bookingForm">
+                <input type="text" id="bookingName" placeholder="Full Name" required>
+                <input type="email" id="bookingEmail" placeholder="Email" required>
+                <div class="file-upload">
+                    <label>Upload Aadhaar</label>
+                    <input type="file" id="aadhaarUpload" accept="image/*" required>
+                </div>
+                <div class="file-upload">
+                    <label>Upload Photo</label>
+                    <input type="file" id="photoUpload" accept="image/*" required>
+                </div>
+                <select id="bookingType" required>
+                    <option value="">Select Booking Type</option>
+                    <option value="hourly">Hourly</option>
+                    <option value="daily">Daily</option>
+                </select>
+                <input type="number" id="duration" placeholder="Duration (hours/days)" min="1" required>
+                <button type="submit" class="btn-submit">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Host Modal -->
+    <div id="hostModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeHost">&times;</span>
+            <h2>Become a Host</h2>
+            <form id="hostForm">
+                <input type="text" id="carName" placeholder="Car Name" required>
+                <input type="text" id="regNumber" placeholder="Registration Number" required>
+                <div class="file-upload">
+                    <label>Upload Car Papers</label>
+                    <input type="file" id="carPapers" accept="image/*,application/pdf" required>
+                </div>
+                <input type="text" id="ownerName" placeholder="Owner Name" required>
+                <div class="file-upload">
+                    <label>Upload Aadhaar</label>
+                    <input type="file" id="ownerAadhaar" accept="image/*" required>
+                </div>
+                <div class="file-upload">
+                    <label>Upload Photo</label>
+                    <input type="file" id="ownerPhoto" accept="image/*" required>
+                </div>
+                <button type="submit" class="btn-submit">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
